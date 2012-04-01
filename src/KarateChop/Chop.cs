@@ -7,7 +7,11 @@ namespace KarateChop
 	{
 		public static int Chop(int valueToFind, IList<int> values)
 		{
-			return 0;
+			if(values.Count == 1)
+			if(values[0] == valueToFind)
+				return 0;
+			
+			return -1;
 		}
 	}
 }
