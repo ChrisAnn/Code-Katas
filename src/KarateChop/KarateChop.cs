@@ -35,22 +35,20 @@ namespace KarateChop
 			if(values[mid] == valueToFind)
 				return mid;
 			else if(mid == 0)
-				return -1;
+				return 0;
 			
 			if(values[mid] > valueToFind)
 			{
 				int[] half = new int[mid];
 				Array.Copy(values, half, mid);
 				return Recursive(valueToFind, half);
-			} else if(values[mid] < valueToFind)
+			} else
 			{
 				int[] half = new int[values.Length - mid];
 				Console.WriteLine(mid);
 				Array.Copy(values, mid, half, 0, values.Length - mid);
 				return mid + Recursive(valueToFind, half);
 			}
-
-			return -1;
 		}
 	}
 }
