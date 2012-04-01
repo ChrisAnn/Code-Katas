@@ -42,10 +42,10 @@ namespace KarateChop
 				return Recursive(valueToFind, half);
 			} else if(values[mid] < valueToFind)
 			{
-				int[] half = new int[mid];
+				int[] half = new int[values.Length - mid];
 				Console.WriteLine(mid);
-				Array.Copy(values, mid, half, 0, mid);
-				return mid + Recursive(valueToFind, half);				
+				Array.Copy(values, mid, half, 0, values.Length - mid);
+				return mid + Recursive(valueToFind, half);
 			}
 
 			return -1;
