@@ -34,7 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Chop.cs" />
+    <Compile Include="KarateChop.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
