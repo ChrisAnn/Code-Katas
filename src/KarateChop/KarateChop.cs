@@ -34,6 +34,8 @@ namespace KarateChop
 			
 			if(values[mid] == valueToFind)
 				return mid;
+			else if(mid == 0)
+				return -1;
 			
 			if(values[mid] > valueToFind)
 			{
