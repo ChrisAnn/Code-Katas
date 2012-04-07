@@ -27,27 +27,38 @@ namespace KarateChop
 		
 		public static int Recursive(int valueToFind, int[] values)
 		{
-			if(values.Length == 0)
+			try
+			{
+				return RecursiveChop(valueToFind, values);
+			} catch
+			{
 				return -1;
+			}
+		}
+
+		private static int RecursiveChop(int valueToFind, int[] values)
+		{
+			if(values.Length == 0)
+				throw new Exception();
 			
 			int mid = values.Length / 2;
 			
 			if(values[mid] == valueToFind)
 				return mid;
 			else if(mid == 0)
-				return 0;
+				throw new Exception();
 			
 			if(values[mid] > valueToFind)
 			{
 				int[] half = new int[mid];
 				Array.Copy(values, half, mid);
-				return Recursive(valueToFind, half);
+				return RecursiveChop(valueToFind, half);
 			} else
 			{
 				int[] half = new int[values.Length - mid];
 				Console.WriteLine(mid);
 				Array.Copy(values, mid, half, 0, values.Length - mid);
-				return mid + Recursive(valueToFind, half);
+				return mid + RecursiveChop(valueToFind, half);
 			}
 		}
 	}
